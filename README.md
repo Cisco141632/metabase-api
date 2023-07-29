@@ -62,7 +62,7 @@ docker --version
 
  5. **Run Query**
     - Once you've run the query, you should see the results as shown in the image below
-    
+
     ![Image description](images/metabase_native_question_example_1.png)
 
 ### Installing `metabase-api-python`
@@ -81,23 +81,23 @@ Follow the steps below to install the `metabase-api-python` package:
 
 3. Use pip to install the `metabase-api-python` package from PyPi:
 
-    ```shell
-    pip3 install metabase-api-python
-    ```
+```shell
+pip3 install metabase-api-python
+```
 
 4. Now, you can use the `metabase-api-python` package in your Python scripts. Here's a basic example:
 
-    ```python
-    from metabase_api_python import MetabaseAPI
+```python
+from metabase_api_python import MetabaseAPI
 
-	metabase_api = MetabaseAPI(
-		base_url="http://localhost:3000", 
-		user_name="YOUR_USERNAME", 
-		password="YOUR_PASSWORD"
-	)
+metabase_api = MetabaseAPI(
+	base_url="http://localhost:3000", 
+	user_name="YOUR_USERNAME", 
+	password="YOUR_PASSWORD"
+)
 
-	print("Access Token is : ", metabase_api.access_token)
-    ```
+print("Access Token is : ", metabase_api.access_token)
+```
 
 Please replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your actual Metabase credentials. 
 
@@ -114,9 +114,9 @@ Note: The installation process might vary slightly depending on your operating s
 ### **get_data_from_question**
 
 **Ex:** Get the question data without parameters 
-
-	```python3
-	from metabase_api_python import MetabaseAPI
+	
+```python
+from metabase_api_python import MetabaseAPI
 
 	metabase_api = MetabaseAPI(
 		base_url="http://localhost:3000", 
@@ -129,40 +129,39 @@ Note: The installation process might vary slightly depending on your operating s
 		question_id=1 
 	)
 	print(question_response)
+```
 
-	```
-
-	Note: Usually, the question_id for the first question you create in Metabase is 1. You can verify this by checking the URL when you navigate to the question in your local Metabase interface. For example, if your URL is http://localhost:3000/question/1-your-question-name, the question_id is 1.
+Note: Usually, the question_id for the first question you create in Metabase is 1. You can verify this by checking the URL when you navigate to the question in your local Metabase interface. For example, if your URL is http://localhost:3000/question/1-your-question-name, the question_id is 1.
 
 **Ex:** Get the question data with parameters
 
-	```python3
-	payload =  [
-	    {
-	        "type": "text",
-	        "value": "borer-hudson@yahoo.com",
-	        "target": ["variable", ["template-tag", "email"]]
-	        
-	    }
-	]
+```python
+payload =  [
+    {
+        "type": "text",
+        "value": "borer-hudson@yahoo.com",
+        "target": ["variable", ["template-tag", "email"]]
+        
+    }
+]
 
-	question_response = metabase_api.get_data_from_question(
-		question_id=1,params=payload
-	)
-	print(question_response)
-	```
+question_response = metabase_api.get_data_from_question(
+	question_id=1,params=payload
+)
+print(question_response)
+```
 
 ### **archive_question**
 
 **Ex:** Archive Question
 
-	```python
+```python
 
-	# Archive Question
-	metabase_api.archive_question(
-		question_id=1
-	)
+# Archive Question
+metabase_api.archive_question(
+	question_id=1
+)
 
-	```
+```
 
 
