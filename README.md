@@ -1,20 +1,11 @@
-# [metabase-api](https://www.metabase.com/docs/latest/api-documentation)
-Metabase is an open-source tool for creating data dashboards and visualizations. It provides a RESTful API that allows you to programmatically access and modify many of its features.
+## Metabase Overview
+
+[Metabase](https://www.metabase.com/) is an open-source tool used for creating data dashboards and visualizations. It simplifies the process of exploring and understanding your data. By providing a user-friendly interface, it allows users to query data without needing extensive SQL knowledge. Metabase supports a variety of databases and has a robust API.
 
 
-before using this script we need to setup local metabase server. 
+# [Metabase API: An Introduction](https://www.metabase.com/docs/latest/api-documentation)
 
-For setup related i am using docker. if your are not install docker in your system please setup you docket in you local system these are the reference
+Metabase is a powerful open-source tool for creating data dashboards and visualizations. It offers a RESTful API, allowing programmatic access and modification of many of its features.
 
-once setup done. once ensure is docker is install or not using below command 
+To make use of this script, a local Metabase server needs to be set up. This process involves Docker, which needs to be installed and configured on your system.
 
-after install the docker need to pull the metabase image and run metabase docker image in your local. 
-open the localhost:3000 in your browser and create account no need to connect the data source. click on later will add
-create any new native question just retrive the persons details from people table
-after save the question in your personal collection
-
-then clone this metabase-api-python repo in your local file
-
-
-
-clone this project 
