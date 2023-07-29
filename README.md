@@ -42,8 +42,26 @@ docker --version
     - Open your browser and visit `http://localhost:3000`
     - You will be greeted with the Metabase setup wizard. Follow the prompts to set up an account and connect your data sources.
 
-4. **Create and Save a Question**
+4. **Create and Save a Native Question**
     - In Metabase, create a new 'question' (a query or report), and save it to your 'Personal Collection' or any other collection.
+
+    Ex: 
+    ```sql
+    select 
+	    email, password, name
+	from people 
+	where (
+	    email in (
+	        'borer-hudson@yahoo.com', 
+	        'williamson-domenica@yahoo.com'
+	    )
+	    [[and email = {{email}}]] -- email parameter is optional
+	)
+    ```
+
+ 5. **Run Query**
+    - Once you've run the query, you should see the results as shown in the image below
+    ![Image description](images/metabase_native_question_example_1.png)
 
 ### Installing `metabase-api-python`
 
@@ -87,4 +105,53 @@ Note: The installation process might vary slightly depending on your operating s
 - get_data_from_question
 - archive_question
 - delete_question
+
+* **get_data_from_question**
+
+Ex: Get the question data without parameters 
+```python3
+from metabase_api_python import MetabaseAPI
+
+metabase_api = MetabaseAPI(
+	base_url="http://localhost:3000", 
+	user_name="xxxxxx@gmail.com", 
+	password="xxxxxx"
+)
+
+# Get Question Reponse
+question_response = metabase_api.get_data_from_saved_metabase_question(
+	card_id=65
+)
+print(question_response)
+
+```
+
+Ex: Get the question data with parameters
+```python3
+payload =  [
+    {
+        "type": "text",
+        "value": "borer-hudson@yahoo.com",
+        "target": ["variable", ["template-tag", "email"]]
+        
+    }
+]
+
+question_response = metabase_api.get_data_from_saved_metabase_question(
+	card_id=65,params=payload
+)
+print(question_response)
+```
+
+* **archive_question**
+
+Ex:
+```python
+
+# Archive Question
+metabase_api.archive_card(
+	card_id=65
+)
+
+```
 
