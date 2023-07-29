@@ -2,8 +2,8 @@ from metabase_api_python import MetabaseAPI
 
 metabase_api = MetabaseAPI(
 	base_url="http://localhost:3000", 
-	user_name="durgaprasad141632@gmail.com", 
-	password="vcy5ka@@"
+	user_name="xxxxxx@gmail.com", 
+	password="xxxxxx"
 )
 
 # Get Question Reponse
