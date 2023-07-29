@@ -46,6 +46,7 @@ docker --version
     - In Metabase, create a new 'question' (a query or report), and save it to your 'Personal Collection' or any other collection.
 
     **Ex:** Fetch users details for specific emails from `people` table of Sample Database 
+
     ```sql
     select 
 	    email, password, name
@@ -61,6 +62,7 @@ docker --version
 
  5. **Run Query**
     - Once you've run the query, you should see the results as shown in the image below
+    
     ![Image description](images/metabase_native_question_example_1.png)
 
 ### Installing `metabase-api-python`
@@ -112,6 +114,7 @@ Note: The installation process might vary slightly depending on your operating s
 ### **get_data_from_question**
 
 **Ex:** Get the question data without parameters 
+
 	```python3
 	from metabase_api_python import MetabaseAPI
 
@@ -128,9 +131,11 @@ Note: The installation process might vary slightly depending on your operating s
 	print(question_response)
 
 	```
+
 	Note: Usually, the question_id for the first question you create in Metabase is 1. You can verify this by checking the URL when you navigate to the question in your local Metabase interface. For example, if your URL is http://localhost:3000/question/1-your-question-name, the question_id is 1.
 
 **Ex:** Get the question data with parameters
+
 	```python3
 	payload =  [
 	    {
@@ -150,6 +155,7 @@ Note: The installation process might vary slightly depending on your operating s
 ### **archive_question**
 
 **Ex:** Archive Question
+
 	```python
 
 	# Archive Question
