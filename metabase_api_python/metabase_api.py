@@ -33,11 +33,11 @@ class MetabaseAPI():
 				"Invalid base_url, Please check your base_url. If base_url contains '/' at the place of end then remove it"
 			)
 	
-	def get_data_from_saved_metabase_question(self, card_id=None, params=None):
-		if not card_id:
-			raise InvalidRequest("Invalid Request, card_id is empty. please pass valid card_id")
+	def get_data_from_question(self, question_id=None, params=None):
+		if not question_id:
+			raise InvalidRequest("Invalid Request, question_id is empty. please pass valid question_id")
 
-		url = self.base_url + '/api/card/{card_id}/query/json'.format(card_id=card_id)
+		url = self.base_url + '/api/card/{question_id}/query/json'.format(question_id=question_id)
 		headers = {
 			'X-Metabase-Session': self.access_token
 		}
@@ -54,11 +54,11 @@ class MetabaseAPI():
 		else:
 			self._error_handle(response.status_code)
 
-	def archive_card(self,card_id=None):
-		if not card_id:
-			raise InvalidRequest("Invalid Request, card_id is empty. please pass valid card_id")
+	def archive_question(self,question_id=None):
+		if not question_id:
+			raise InvalidRequest("Invalid Request, question_id is empty. please pass valid question_id")
 
-		url = self.base_url + '/api/card/{card_id}'.format(card_id=card_id)
+		url = self.base_url + '/api/card/{question_id}'.format(question_id=question_id)
 		headers = {
 			'X-Metabase-Session': self.access_token
 		}
@@ -74,11 +74,11 @@ class MetabaseAPI():
 			print(response.content)
 			self._error_handle(response.status_code)
 
-	def delete_card(self,card_id=None):
-		if not card_id:
-			raise InvalidRequest("Invalid Request, card_id is empty. please pass valid card_id")
+	def delete_question(self,question_id=None):
+		if not question_id:
+			raise InvalidRequest("Invalid Request, question_id is empty. please pass valid question_id")
 
-		url = self.base_url + '/api/card/{card_id}'.format(card_id=card_id)
+		url = self.base_url + '/api/card/{question_id}'.format(question_id=question_id)
 		headers = {
 			'X-Metabase-Session': self.access_token
 		}
@@ -91,6 +91,6 @@ class MetabaseAPI():
 		else:
 			self._error_handle(response.status_code)
 
-	def create_saved_question(self):
+	def create_question(self):
 		pass
 
