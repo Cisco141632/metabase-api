@@ -45,7 +45,7 @@ docker --version
 4. **Create and Save a Native Question**
     - In Metabase, create a new 'question' (a query or report), and save it to your 'Personal Collection' or any other collection.
 
-    **Ex:** Fetch users details for sepecific email from people table
+    **Ex:** Fetch users details for specific emails from `people` table of Sample Database 
     ```sql
     select 
 	    email, password, name
@@ -109,7 +109,7 @@ Note: The installation process might vary slightly depending on your operating s
 - archive_question
 - delete_question
 
-* **get_data_from_question**
+### **get_data_from_question**
 
 **Ex:** Get the question data without parameters 
 	```python3
@@ -147,7 +147,7 @@ Note: The installation process might vary slightly depending on your operating s
 	print(question_response)
 	```
 
-* **archive_question**
+### **archive_question**
 
 **Ex:** Archive Question
 	```python
