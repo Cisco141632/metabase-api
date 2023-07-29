@@ -2,8 +2,8 @@ from metabase_api import *
 
 metabase_api = MetabaseAPI(
 	base_url="http://localhost:3000", 
-	user_name="durgaprasad141632@gmail.com", 
-	password="vcy5ka@@"
+	user_name="xxxxx@gmail.com", 
+	password="xxxxx"
 )
 
 payload =  [
