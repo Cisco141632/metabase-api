@@ -37,10 +37,6 @@ class MetabaseAPI():
 		if not card_id:
 			raise InvalidRequest("Invalid Request, card_id is empty. please pass valid card_id")
 
-		if not params:
-			raise InvalidRequest("Invalid Request, parameters are empty list. please pass valid parameters")
-
-
 		url = self.base_url + '/api/card/{card_id}/query/json'.format(card_id=card_id)
 		headers = {
 			'X-Metabase-Session': self.access_token

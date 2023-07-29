@@ -1,9 +1,9 @@
-from metabase_api import *
+from metabase_api import MetabaseAPI
 
 metabase_api = MetabaseAPI(
 	base_url="http://localhost:3000", 
-	user_name="xxxxx@gmail.com", 
-	password="xxxxx"
+	user_name="durgaprasad141632@gmail.com", 
+	password="Vcy5ka@@"
 )
 
 payload =  [
@@ -17,7 +17,7 @@ payload =  [
 
 print(metabase_api.access_token)
 
-question_response = metabase_api.archive_card(
-	card_id=33
+question_response = metabase_api.get_data_from_saved_metabase_question(
+	card_id=65
 )
 print(question_response)
