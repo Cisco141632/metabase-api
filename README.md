@@ -83,4 +83,8 @@ Remember, always keep these credentials secure. Do not expose them in any places
 Note: The installation process might vary slightly depending on your operating system and the specific configuration of your Python environment.
 
 
-### Avalable Functions
+## Avalable Functions
+- get_data_from_question
+- archive_question
+- delete_question
+
