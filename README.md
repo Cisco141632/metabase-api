@@ -30,7 +30,7 @@ Before setting up Metabase locally, you need to have Docker installed on your sy
 docker --version
 ```
 
-### Steps
+### Steps For Metabase Setup
 
 1. **Pull the Metabase image from Docker Hub**
     - Open a terminal and run the following command: `docker pull metabase/metabase`
@@ -45,3 +45,42 @@ docker --version
 4. **Create and Save a Question**
     - In Metabase, create a new 'question' (a query or report), and save it to your 'Personal Collection' or any other collection.
 
+### Installing `metabase-api-python`
+
+Before you begin, make sure you have Python3 and pip3 installed on your system. If not, refer to the official Python [installation guide](https://www.python.org/downloads/) and pip [installation guide](https://pip.pypa.io/en/stable/installation/).
+
+
+Follow the steps below to install the `metabase-api-python` package:
+
+1. Open a terminal.
+
+2. If you're using a virtual environment (which is a good practice), make sure to activate it. If you're not, that's perfectly fine too.
+
+3. Use pip to install the `metabase-api-python` package from PyPi:
+
+    ```shell
+    pip3 install metabase-api-python
+    ```
+
+4. Now, you can use the `metabase-api-python` package in your Python scripts. Here's a basic example:
+
+    ```python
+    from metabase_api_python import MetabaseAPI
+
+	metabase_api = MetabaseAPI(
+		base_url="http://localhost:3000", 
+		user_name="YOUR_USERNAME", 
+		password="YOUR_PASSWORD"
+	)
+
+	print("Access Token is : ", metabase_api.access_token)
+    ```
+
+Please replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your actual Metabase credentials. 
+
+Remember, always keep these credentials secure. Do not expose them in any places. 
+
+Note: The installation process might vary slightly depending on your operating system and the specific configuration of your Python environment.
+
+
+### Avalable Functions

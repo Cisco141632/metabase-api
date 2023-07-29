@@ -7,7 +7,7 @@ with open("requirements.txt", "r") as f:
 
 setup(
     name='metabase-api-python',
-    version='0.0.5',
+    version='0.0.6',
     url='https://github.com/Cisco141632/metabase-api-python',
     author='Cisco141632',
     author_email='durgaprasad141632@gmail.com',
