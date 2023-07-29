@@ -1,7 +1,7 @@
 import json
 import requests
 from urllib.parse import urlencode
-from exceptions import *
+from .exceptions import *
 
 class MetabaseAPI():
 	def __init__(self, base_url=None,user_name=None,password=None):
