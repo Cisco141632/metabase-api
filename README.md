@@ -1,4 +1,4 @@
-## Metabase Overview
+# Metabase Overview
 
 [Metabase](https://www.metabase.com/) is an open-source tool used for creating data dashboards and visualizations. It simplifies the process of exploring and understanding your data. By providing a user-friendly interface, it allows users to query data without needing extensive SQL knowledge. Metabase supports a variety of databases and has a robust API.
 
