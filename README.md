@@ -45,7 +45,7 @@ docker --version
 4. **Create and Save a Native Question**
     - In Metabase, create a new 'question' (a query or report), and save it to your 'Personal Collection' or any other collection.
 
-    Ex: 
+    Ex: Fetch users details for sepecific email from people table
     ```sql
     select 
 	    email, password, name
@@ -69,6 +69,9 @@ Before you begin, make sure you have Python3 and pip3 installed on your system. 
 
 
 Follow the steps below to install the `metabase-api-python` package:
+
+> **NOTE:** We have not yet handled all error cases, and we have only added a few functions. More functions and scripts will be added over time. Please keep this in mind while using this module.
+
 
 1. Open a terminal.
 
@@ -154,4 +157,5 @@ metabase_api.archive_card(
 )
 
 ```
+
 
