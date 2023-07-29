@@ -7,8 +7,8 @@ metabase_api = MetabaseAPI(
 )
 
 # Get Question Reponse
-question_response = metabase_api.get_data_from_saved_metabase_question(
-	card_id=65
+question_response = metabase_api.get_data_from_question(
+	question_id=1
 )
 print(question_response)
 
@@ -23,13 +23,13 @@ payload =  [
     }
 ]
 
-question_response = metabase_api.get_data_from_saved_metabase_question(
-	card_id=65,params=payload
+question_response = metabase_api.get_data_from_question(
+	question_id=1,params=payload
 )
 print(question_response)
 
 
 # Archive Question
-metabase_api.archive_card(
-	card_id=65
+metabase_api.archive_question(
+	question_id=1
 )
