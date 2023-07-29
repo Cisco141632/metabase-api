@@ -45,7 +45,7 @@ docker --version
 4. **Create and Save a Native Question**
     - In Metabase, create a new 'question' (a query or report), and save it to your 'Personal Collection' or any other collection.
 
-    Ex: 
+    **Ex:** Fetch users details for sepecific email from people table
     ```sql
     select 
 	    email, password, name
@@ -69,6 +69,9 @@ Before you begin, make sure you have Python3 and pip3 installed on your system. 
 
 
 Follow the steps below to install the `metabase-api-python` package:
+
+> **NOTE:** We have not yet handled all error cases, and we have only added a few functions. More functions and scripts will be added over time. Please keep this in mind while using this module.
+
 
 1. Open a terminal.
 
@@ -108,50 +111,52 @@ Note: The installation process might vary slightly depending on your operating s
 
 * **get_data_from_question**
 
-Ex: Get the question data without parameters 
-```python3
-from metabase_api_python import MetabaseAPI
+**Ex:** Get the question data without parameters 
+	```python3
+	from metabase_api_python import MetabaseAPI
 
-metabase_api = MetabaseAPI(
-	base_url="http://localhost:3000", 
-	user_name="xxxxxx@gmail.com", 
-	password="xxxxxx"
-)
+	metabase_api = MetabaseAPI(
+		base_url="http://localhost:3000", 
+		user_name="xxxxxx@gmail.com", 
+		password="xxxxxx"
+	)
 
-# Get Question Reponse
-question_response = metabase_api.get_data_from_saved_metabase_question(
-	card_id=65
-)
-print(question_response)
+	# Get Question Reponse
+	question_response = metabase_api.get_data_from_question(
+		question_id=1 
+	)
+	print(question_response)
 
-```
+	```
+	Note: Usually, the question_id for the first question you create in Metabase is 1. You can verify this by checking the URL when you navigate to the question in your local Metabase interface. For example, if your URL is http://localhost:3000/question/1-your-question-name, the question_id is 1.
 
-Ex: Get the question data with parameters
-```python3
-payload =  [
-    {
-        "type": "text",
-        "value": "borer-hudson@yahoo.com",
-        "target": ["variable", ["template-tag", "email"]]
-        
-    }
-]
+**Ex:** Get the question data with parameters
+	```python3
+	payload =  [
+	    {
+	        "type": "text",
+	        "value": "borer-hudson@yahoo.com",
+	        "target": ["variable", ["template-tag", "email"]]
+	        
+	    }
+	]
 
-question_response = metabase_api.get_data_from_saved_metabase_question(
-	card_id=65,params=payload
-)
-print(question_response)
-```
+	question_response = metabase_api.get_data_from_question(
+		question_id=1,params=payload
+	)
+	print(question_response)
+	```
 
 * **archive_question**
 
-Ex:
-```python
+**Ex:** Archive Question
+	```python
 
-# Archive Question
-metabase_api.archive_card(
-	card_id=65
-)
+	# Archive Question
+	metabase_api.archive_question(
+		question_id=1
+	)
 
-```
+	```
+
 
